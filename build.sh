@@ -25,5 +25,7 @@ PY
 fi
 swiftc Sources/USBBar.swift -target "$(uname -m)-apple-macos13.0" -o "$app/Contents/MacOS/USBVyo" -O "${extra_flags[@]}" -framework AppKit -framework SwiftUI -framework IOKit -framework DiskArbitration -framework ServiceManagement
 cp Info.plist "$app/Contents/Info.plist"
+mkdir -p "$app/Contents/Resources"
+cp LICENSE "$app/Contents/Resources/LICENSE"
 codesign --force --sign - "$app"
 echo "$app"

@@ -1,8 +1,16 @@
 # USB Vyo
 
+Questo è il mio primo progetto open source pubblico. È stato realizzato completamente con AI, usando Codex: codice, interfaccia e documentazione sono stati generati dall’AI a partire dalle mie richieste.
+
 App macOS 13 o successivo nella barra dei menu. Mostra le unità USB fisiche esterne e la velocità negoziata con la porta: USB 2.0 (480 Mbit/s), USB 3 (5, 10 o 20 Gbit/s), oppure una velocità precedente o sconosciuta. Con più unità, la barra mostra il collegamento più lento e il numero di unità; apri il pannello per i dettagli.
 
 La velocità è letta dal dispositivo USB padre tramite IOKit, non dalla capacità teorica dichiarata nel descrittore USB. Non misura la velocità di copia e non prova che sia stato raggiunto il massimo possibile per quel modello. Aggiornamento ogni due secondi, senza leggere o scrivere file sulla chiavetta.
+
+## Download
+
+Scarica la versione pronta dalla pagina [Releases](https://github.com/vyoress/usb-vyo/releases). La release 1.0.0 include una build per **Apple Silicon (arm64)**; sui Mac Intel è necessario compilare il codice sorgente sul proprio Mac.
+
+Estrai lo ZIP e copia `USB Vyo.app` nella cartella Applicazioni. La build pubblicata è firmata localmente e non è notarizzata da Apple; macOS può impedirne l’apertura. In alternativa puoi compilare il progetto sul tuo Mac seguendo le istruzioni sotto.
 
 ## Uso
 
@@ -39,3 +47,7 @@ Il programma supporta `--diagnose` per una verifica in sola lettura dell’hardw
 ## Dati e permessi
 
 L’app non contiene servizi di rete, telemetria o librerie di terze parti. Legge le informazioni locali dei dispositivi tramite IOKit e Disk Arbitration; l’espulsione viene eseguita da `diskutil` senza comandi di formattazione o espulsione forzata. L’opzione di avvio all’accesso usa Service Management di macOS. Non richiede i permessi di registrazione dello schermo o controllo del computer.
+
+## Licenza
+
+Distribuito con [licenza MIT](LICENSE). Copyright © 2026 vyoress.
